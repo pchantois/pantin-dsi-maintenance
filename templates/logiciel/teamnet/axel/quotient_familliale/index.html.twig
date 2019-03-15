@@ -1,0 +1,109 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{ controller_name }}!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    <div id="box">
+    	<div id="onglets" >
+			<ul>
+				<li><a href="#onglet-1">Général</a></li>
+				<li><a href="#onglet-2">Familles (Dettes - de 500 eur)</a></li>
+				<li><a href="#onglet-3">Familles (Dettes + de 500 eur)</a></li>
+			</ul>
+
+
+
+		    {% for item in items %}
+		    	<div id="onglet-{{loop.index}}">
+				    <table>
+				    	<th>
+				    		<td></td>
+				    		<td>Nom</td>
+				    		<td>Code famille</td>
+				    		<td>Montant</td>
+				    	</th>
+				    	{% for data in item %}
+							<tr>
+					    		<td>{{loop.index}}</td>
+								<td>{{data.0}}</td>
+								<td>{{data.1}}</td>
+								<td>{{data.2}}</td>
+							</tr>
+						{% endfor %}
+				    </table>
+				</div>
+		    {% endfor %}
+    	</div>
+    </div>
+
+    <!--ol>
+        <li>Your controller at <code><a href="{{ 'src/Controller/Logiciel/Teamnet/Axel/QuotientFamillialeController.php'|file_link(0) }}">src/Controller/Logiciel/Teamnet/Axel/QuotientFamillialeController.php</a></code></li>
+        <li>Your template at <code><a href="{{ 'templates/logiciel/teamnet/axel/quotient_familliale/index.html.twig'|file_link(0) }}">templates/logiciel/teamnet/axel/quotient_familliale/index.html.twig</a></code></li>
+    </ol-->
+</div>
+{% endblock %}
+
+{% block stylesheets %}
+<link href="jquery-ui-1.10.4/css/ui-lightness/jquery-ui-1.10.4.css" rel="stylesheet">
+
+<style>
+body{
+	font-size: 12px;
+	font-family: Arial;
+}
+
+p { padding: 10px;}
+
+/* modifie le titre de l'onglet */
+li.ui-state-default { font-size : 15px;}
+
+/* modifie le contenu des onglets */
+div.ui-tabs-panel { font-size: 12px;}
+
+/* la largeur des onglets */
+#onglets { width: 660px;}
+
+/* la hauteur des onglets */
+#box {height: 240px;}
+
+</style>
+{% endblock %}
+
+{% block javascripts %}
+<script src="jquery-ui-1.10.4/js/jquery-1.10.2.js"></script>
+<script src="jquery-ui-1.10.4/js/jquery-ui-1.10.4.js"></script>
+
+<script>
+
+/**
+ * Création du menu par onglets
+ * @return {[type]} [description]
+ */
+$(function()
+{ 
+	$("#onglets").tabs({ active: 2 });  // 3ème onglet ouvert par défaut - part de 0 pour le 1er
+	//$("#onglets").tabs({ disabled: [4] }); // desactive le 5eme onglet
+
+	//$("#onglets").tabs({heightStyle: "content"});// ajustement auto de la hauteur des onglets avec le contenu
+	$("#onglets").tabs({heightStyle: "fill"});// ajustement auto de la hauteur des onglets avec le contenu
+
+	//$("#onglets").tabs({ event: "mouseover" }); // ouvre l'onglet au survol de la souris
+	
+	// Permet de fermer tous les onglets en cliquant sur l'un d'eux.
+	var options = { collapsible: true};
+	
+	$("#onglets").tabs(options); 	
+});
+
+
+
+</script>
+{% endblock %}

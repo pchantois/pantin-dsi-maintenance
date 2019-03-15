@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Versioning{% endblock %}
+
+{% block body %}
+    <h1>Edit Versioning</h1>
+
+    {{ include('admin_versioning/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('admin_versioning_index') }}">back to list</a>
+
+    {{ include('admin_versioning/_delete_form.html.twig') }}
+{% endblock %}

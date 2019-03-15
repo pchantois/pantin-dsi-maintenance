@@ -1,0 +1,125 @@
+<!-- 
+/**
+
+  The Initial Developer of the Original Code is
+  Matthieu  - http://www.programmation-facile.com/
+  Portions created by the Initial Developer are Copyright (C) 2013
+  the Initial Developer. All Rights Reserved.
+
+  Contributor(s) :
+
+ */
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+ --> 
+<!DOCTYPE html> 
+<html lang="fr"> 
+<head> 
+<title>jQuery UI</title> 
+<meta charset="UTF-8">
+
+<link href="jquery-ui-1.10.4/css/ui-lightness/jquery-ui-1.10.4.css" rel="stylesheet">
+<script src="jquery-ui-1.10.4/js/jquery-1.10.2.js"></script>
+<script src="jquery-ui-1.10.4/js/jquery-ui-1.10.4.js"></script>
+
+<script>
+
+/**
+ * Création du menu par onglets
+ * @return {[type]} [description]
+ */
+$(function()
+{ 
+	$("#onglets").tabs({ active: 2 });  // 3ème onglet ouvert par défaut - part de 0 pour le 1er
+	$("#onglets").tabs({ disabled: [4] }); // desactive le 5eme onglet
+
+	//$("#onglets").tabs({heightStyle: "content"});// ajustement auto de la hauteur des onglets avec le contenu
+	$("#onglets").tabs({heightStyle: "fill"});// ajustement auto de la hauteur des onglets avec le contenu
+
+	//$("#onglets").tabs({ event: "mouseover" }); // ouvre l'onglet au survol de la souris
+	
+	// Permet de fermer tous les onglets en cliquant sur l'un d'eux.
+	var options = { collapsible: true};
+	
+	$("#onglets").tabs(options); 	
+});
+
+
+
+</script>
+
+
+<style>
+body{
+	font-size: 12px;
+	font-family: Arial;
+}
+
+p { padding: 10px;} 
+
+/* modifie le titre de l'onglet */
+li.ui-state-default { font-size : 15px;} 
+
+/* modifie le contenu des onglets */
+div.ui-tabs-panel { font-size: 12px;} 
+
+/* la largeur des onglets */
+#onglets { width: 660px;}
+
+/* la hauteur des onglets */
+#box {height: 240px;} 
+
+</style>
+
+</head>
+
+<body>
+
+<header> 
+	<h1>Developpement Facile</h1>
+</header>
+
+<div id="box">
+	<div id="onglets" > 
+		
+		<ul> 
+			<li><a href="#onglet-1">Présentation</a></li> 
+			<li><a href="#onglet-2">Formations</a></li> 
+			<li><a href="#onglet-3">Vos Questions</a></li> 
+			<li><a href="#onglet-4">Nous Contacter</a></li> 
+			<li><a href="#onglet-5">Administration</a></li> 
+		</ul> 
+
+		<div id="onglet-1"> 
+			<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p> 
+		</div> 
+
+		<div id="onglet-2"> 
+			<p>On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même. L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il possède une distribution de lettres plus ou moins normale, et en tout cas comparable avec celle du français standard. De nombreuses suites logicielles de mise en page ou éditeurs de sites Web ont fait du Lorem Ipsum leur faux texte par défaut, et une recherche pour 'Lorem Ipsum' vous conduira vers de nombreux sites qui n'en sont encore qu'à leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d'y rajouter de petits clins d'oeil, voire des phrases embarassantes).</p> 
+			<p>On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même. L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il possède une distribution de lettres plus ou moins normale, et en tout cas comparable avec celle du français standard. De nombreuses suites logicielles de mise en page ou éditeurs de sites Web ont fait du Lorem Ipsum leur faux texte par défaut, et une recherche pour 'Lorem Ipsum' vous conduira vers de nombreux sites qui n'en sont encore qu'à leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d'y rajouter de petits clins d'oeil, voire des phrases embarassantes).</p> 
+		</div>
+
+		<div id="onglet-3"> 
+			<p>Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans. Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot dans la littérature classique, découvrit la source incontestable du Lorem Ipsum. Il provient en fait des sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" (Des Suprêmes Biens et des Suprêmes Maux) de Cicéron. Cet ouvrage, très populaire pendant la Renaissance, est un traité sur la théorie de l'éthique. Les premières lignes du Lorem Ipsum, "Lorem ipsum dolor sit amet...", proviennent de la section 1.10.32.
+
+	L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous pour les curieux. Les sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" de Cicéron sont aussi reproduites dans leur version originale, accompagnée de la traduction anglaise de H. Rackham (1914).</p> 
+		</div> 
+
+		<div id="onglet-4"> 
+			<p>Plusieurs variations de Lorem Ipsum peuvent être trouvées ici ou là, mais la majeure partie d'entre elles a été altérée par l'addition d'humour ou de mots aléatoires qui ne ressemblent pas une seconde à du texte standard. Si vous voulez utiliser un passage du Lorem Ipsum, vous devez être sûr qu'il n'y a rien d'embarrassant caché dans le texte. Tous les générateurs de Lorem Ipsum sur Internet tendent à reproduire le même extrait sans fin, ce qui fait de lipsum.com le seul vrai générateur de Lorem Ipsum. Iil utilise un dictionnaire de plus de 200 mots latins, en combinaison de plusieurs structures de phrases, pour générer un Lorem Ipsum irréprochable. Le Lorem Ipsum ainsi obtenu ne contient aucune répétition, ni ne contient des mots farfelus, ou des touches d'humour.</p>
+		</div>
+		
+		<div id="onglet-5"> 
+			<p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+		</div>
+
+	</div> 
+</div>
+
+<br /><br />
+<footer> 
+	<hr> 
+	<p>Copyright www.Developpement-Facile.com 2014</p>  
+</footer> 
+</body> 
+</html>

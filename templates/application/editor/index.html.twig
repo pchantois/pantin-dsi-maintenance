@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editor{% endblock %}
+
+{% block body %}
+    <h1>Editor</h1>
+
+    <ul class="alt">
+    {% for editor in editors %}
+        <li><a href="{{ path('application_software_list', {'editeur': editor.id}) }}">{{ editor.libelle }}</a></li>
+    {% else %}
+        <li>
+            <td colspan="5">no records found</td>
+        </li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}

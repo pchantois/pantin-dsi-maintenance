@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Versioning index{% endblock %}
+
+{% block body %}
+    <h1>Versioning index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Repository</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for versioning in versionings %}
+            <tr>
+                <td>{{ versioning.id }}</td>
+                <td>{{ versioning.repository }}</td>
+                <td>{{ versioning.username }}</td>
+                <td>{{ versioning.password }}</td>
+                <td>
+                    <a href="{{ path('admin_versioning_show', {'id': versioning.id}) }}">show</a>
+                    <a href="{{ path('admin_versioning_edit', {'id': versioning.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_versioning_new') }}">Create new</a>
+{% endblock %}
